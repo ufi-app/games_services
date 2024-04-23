@@ -52,7 +52,7 @@ class Leaderboards: BaseGamesServices {
         do {
           let leaderboards = try await GKLeaderboard.loadLeaderboards(IDs: [leaderboardID])
           guard let leaderboard = leaderboards.first else {
-            result(PluginError.failedToGetScore.flutterError(), details: "could not get leaderboard")
+            result(PluginError.failedToGetScore.flutterError(details: "could not get leaderboard"))
             return
           }
           let response = try await leaderboard.loadEntries(for: [currentPlayer],
