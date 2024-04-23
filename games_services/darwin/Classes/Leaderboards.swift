@@ -83,13 +83,13 @@ class Leaderboards: BaseGamesServices {
               let string = String(data: data, encoding: String.Encoding.utf8)
               result(string)
             } else {
-              result(PluginError.failedToGetScore.flutterError())
+                result(PluginError.failedToGetScore.flutterError(details: "could not parse score data"))
             }
           } else {
-            result(PluginError.failedToGetScore.flutterError())
+              result(PluginError.failedToGetScore.flutterError(details: "could not create object"))
           }
         } catch {
-          result(error.flutterError(code: .failedToGetScore))
+            result(error.flutterError(code: .failedToGetScore, details: "\(error)"))
         }
       }
     } else {
