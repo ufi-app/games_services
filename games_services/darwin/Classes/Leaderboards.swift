@@ -38,7 +38,7 @@ class Leaderboards: BaseGamesServices {
           let (localPlayerEntry, _) = response ?? (nil, nil)
           result(localPlayerEntry?.score ?? 0)
         } catch {
-          result(error.flutterError(code: .failedToGetScore), details: "getPlayerScore task")
+          result(error.flutterError(code: .failedToGetScore, details: "getPlayerScore task"))
         }
       }
     } else {
