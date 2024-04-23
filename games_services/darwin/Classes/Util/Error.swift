@@ -6,10 +6,10 @@ import FlutterMacOS
 #endif
 
 extension Error {
-  func flutterError(code: PluginError) -> FlutterError {
+  func flutterError(code: PluginError, details: String? = nil) -> FlutterError {
     return FlutterError(code: code.rawValue,
                         message: self.localizedDescription,
-                        details: self.localizedDescription)
+                        details: details ?? self.localizedDescription)
   }
 }
 
@@ -63,9 +63,9 @@ enum PluginError: String {
   case failedToResetAchievements = "failed_to_reset_achievements"
   case failedToLoadLeaderboardScores = "failed_to_load_leaderboard_scores"
 
-  func flutterError() -> FlutterError {
+  func flutterError(details: String? = nil) -> FlutterError {
     return FlutterError(code: rawValue,
                         message: errorDescription,
-                        details: errorDescription)
+                        details: details ?? errorDescription)
   }
 }
