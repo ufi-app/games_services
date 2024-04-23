@@ -33,10 +33,11 @@ packages:
   games_services_platform_interface:
     dependency: "direct main"
     description:
-      name: games_services_platform_interface
-      sha256: be5a69656d0b76dd03a7d3d3db5c3eec5d85c51d44c862d83761576fa6cb4f13
-      url: "https://pub.dev"
-    source: hosted
+      path: "games_services_platform_interface"
+      ref: "7bb2d2201d646cb1760e726be45f95bde40b3bc7"
+      resolved-ref: "7bb2d2201d646cb1760e726be45f95bde40b3bc7"
+      url: "git@github.com:ufi-app/games_services.git"
+    source: git
     version: "4.0.1"
   lints:
     dependency: transitive
